@@ -60,7 +60,10 @@ import express from 'express';
 import cors from 'cors';
 import movies from './db/movies.js';
 import pino from 'pino-http';
-const { PORT = 3000 } = process.env;
+import dotenv from 'dotenv';
+dotenv.config();
+const { PORT } = process.env;
+console.log(PORT);
 const startServer = () => {
   const app = express();
   const logger = pino({
