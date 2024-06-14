@@ -60,7 +60,7 @@ import express from 'express';
 import cors from 'cors';
 import movies from './db/movies.js';
 import pino from 'pino-http';
-
+const { PORT = 3000 } = express.env;
 const startServer = () => {
   const app = express();
   const logger = pino({
@@ -79,7 +79,7 @@ const startServer = () => {
     });
   });
   app.listen(3000, () => {
-    console.log('Server is runnig 3000');
+    console.log(`Server is runnig ${PORT}`);
   });
 };
 
