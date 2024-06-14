@@ -60,7 +60,7 @@ import express from 'express';
 import cors from 'cors';
 import movies from './db/movies.js';
 import pino from 'pino-http';
-const { PORT = 3000 } = express.env;
+const { PORT = 3000 } = process.env;
 const startServer = () => {
   const app = express();
   const logger = pino({
