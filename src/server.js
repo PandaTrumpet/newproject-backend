@@ -60,8 +60,10 @@ import express from 'express';
 import cors from 'cors';
 import movies from './db/movies.js';
 import pino from 'pino-http';
-import dotenv from 'dotenv';
-dotenv.config();
+// import dotenv from 'dotenv';
+// dotenv.config();
+
+import 'dotenv/config';
 const { PORT } = process.env;
 console.log(PORT);
 const startServer = () => {
