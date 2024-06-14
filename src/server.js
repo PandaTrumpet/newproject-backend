@@ -62,10 +62,10 @@ import movies from './db/movies.js';
 import pino from 'pino-http';
 // import dotenv from 'dotenv';
 // dotenv.config();
-
+import env from './utils/env.js';
 import 'dotenv/config';
-const { PORT } = process.env;
-console.log(PORT);
+const port = env('PORT', '3000');
+// console.log(PORT);
 const startServer = () => {
   const app = express();
   const logger = pino({
@@ -83,8 +83,8 @@ const startServer = () => {
       message: 'Not found',
     });
   });
-  app.listen(3000, () => {
-    console.log(`Server is runnig ${PORT}`);
+  app.listen(port, () => {
+    console.log(`Server is runnig ${port}`);
   });
 };
 
